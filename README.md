@@ -47,24 +47,36 @@ This tool helps you keep your important files completely secure.
 
 ## 📦 Usage / 使い方
 
+🛣️ Paths with spaces / スペースを含むパス
 ```bash
-# Encrypt a file / ファイルを暗号化
-khurma-crypto.exe encrypt <seed> <input_file> <output_file>
-
-# Decrypt a file / ファイルを復号化
-khurma-crypto.exe decrypt <seed> <input_file> <output_file>
+./khurma encrypt mypassword "C:\path with spaces\test.txt" encrypted.bin
 ```
-## 💡 Exsmple / サンプル
+📁 Output to a non-existent directory (auto-created)
+存在しないディレクトリへの出力（自動作成）
 ```bash
-#Encrypt a movie.mp4 / ファイルを暗号化
-khurma-crypto encrypt mySecretKey movie.mp4 movie_encrypted.bin
-
-# Decrypt a movie_encrypted.bin/ ファイルを復号化
-khurma-crypto decrypt mySecretKey movie_encrypted.bin movie_restored.mp4
+./khurma encrypt mypassword test.txt "C:\new_folder\encrypted.bin"
 ```
+🗂️ Auto-create multi-level directories
+複数階層のディレクトリも自動作成
+```bash
+./khurma encrypt mypassword test.txt "C:\path\to\new\folder\encrypted.bin"
+```
+📄 Normal paths / 通常のパス
+```bash
+./khurma encrypt mypassword C:\path\test.txt encrypted.bin
+```
+🔀 Relative paths / 相対パス
+```bash
+./khurma encrypt mypassword ./test.txt ./encrypted.bin
+```
+💡 Example / サンプル
+```bash
+# Encrypt a file with a key / 暗号化
+./khurma encrypt mySecretKey "C:\Videos\movie.mp4" "C:\Encrypted\movie_encrypted.bin"
 
-
-
+# Decrypt the encrypted file / 復号化
+./khurma decrypt mySecretKey "C:\Encrypted\movie_encrypted.bin" "C:\Videos\movie_restored.mp4"
+```
 
 ## ⚠️ Disclaimer / 免責事項
 
