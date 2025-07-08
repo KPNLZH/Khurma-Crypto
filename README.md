@@ -3,6 +3,15 @@
 **Secure and blazing-fast AES-256 file encryption tool for all file types, powered by Rust.**  
 **あらゆるファイル形式に対応した、高速かつ安全なAES-256ファイル暗号化ツール（Rust製）です。**
 
+- This design philosophy enables a reproducible yet irreversible "controlled chaos", offering practical resistance even against quantum computers.
+
+この設計思想により、再現可能かつ不可逆な“制御されたカオス”を実現し、量子コンピュータに対しても現実的に破られない耐性を提供します。
+
+- By layering multiple rounds of encryption using arbitrary random seeds, the decryption key space expands to an astronomical scale, making brute-force attacks and quantum-assisted searches virtually infeasible.
+
+任意の乱数シードから何重にも暗号化を重ねることで、復号の鍵空間は天文学的規模へと拡張され、総当たり攻撃や量子探索に対して極めて強靭です。
+
+
 # 🧩 Binary Format Support / 対応フォーマット
 This tool treats all files as binary (Vec<u8>), so it supports / 以下の形式に対応しています：
 
