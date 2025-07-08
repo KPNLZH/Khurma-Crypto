@@ -24,6 +24,9 @@ Any other format / その他すべての形式
 - **Add the executable to your environment PATH to easily call the command from other programs or scripts.**
 　実行ファイルのパスを環境変数PATHに追加すれば、他のプログラムやスクリプトから簡単にコマンドを呼び出せます。
 
+- **Perform multi-layer encryption using multiple passwords**  
+  複数のパスワードを使った多重暗号化にも対応（連携ツールと組み合わせて利用可能）
+
 This tool helps you keep your important files completely secure.  
 あなたの大切なファイルをしっかり守ります。
 
@@ -46,6 +49,8 @@ This tool helps you keep your important files completely secure.
 -  Rust-powered CLI: fast, secure, memory-efficient  
 　Rustで実装された高速＆軽量なCLIツール
 
+- Compatible with the companion multi-layer encryption launcher (`extended-crypt`)  
+  連携ツール `extended-crypt` を使った多重暗号化に対応
 ---
 
 ## 📦 Usage / 使い方
@@ -79,6 +84,25 @@ This tool helps you keep your important files completely secure.
 
 # Decrypt the encrypted file / 復号化
 ./khurma decrypt mySecretKey "C:\Encrypted\movie_encrypted.bin" "C:\Videos\movie_restored.mp4"
+```
+
+## 🔁 Multi-layer Encryption / 多重暗号化
+
+Use the companion tool `extended-crypt` to perform multi-layer encryption or decryption with multiple keys.
+
+連携ツール `extended-crypt` を使えば、複数のキーによる多重暗号化・復号が簡単に行えます。
+
+### 🔐 Encrypt with multiple keys / 複数キーで暗号化
+```bash
+extended-crypt.exe encrypt key1 key2 key3 -i test.txt -o out.bin
+```
+### 🔓 Decrypt in reverse order / 逆順に復号
+```bash
+extended-crypt.exe decrypt key3 key2 key1 -i out.bin -o restored.txt
+```
+### 🛠️ Specify khurma path manually / khurma-crypto.exe のパス指定
+```bash
+extended-crypt.exe encrypt key1 key2 -i test.txt -o out.bin --binpath "C:\tools\khurma-crypto.exe"
 ```
 
 ## ⚠️ Disclaimer / 免責事項
