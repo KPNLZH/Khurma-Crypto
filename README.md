@@ -50,10 +50,10 @@ This tool helps you keep your important files completely secure.
 
 ```bash
 # Encrypt a file / ファイルを暗号化
-$khurma-crypto.exe encrypt <seed> <input_file> <output_file>
+khurma-crypto.exe encrypt <seed> <input_file> <output_file>
 
 # Decrypt a file / ファイルを復号化
-$khurma-crypto.exe decrypt <seed> <input_file> <output_file>
+khurma-crypto.exe decrypt <seed> <input_file> <output_file>
 ```
 ## 💡 exsmple / サンプル
 ```bash
