@@ -54,7 +54,7 @@ khurma-crypto.exe encrypt <seed> <input_file> <output_file>
 # Decrypt a file / ファイルを復号化
 khurma-crypto.exe decrypt <seed> <input_file> <output_file>
 ```
-## 💡 exsmple / サンプル
+## 💡 Exsmple / サンプル
 ```bash
 #Encrypt a movie.mp4 / ファイルを暗号化
 khurma-crypto encrypt mySecretKey movie.mp4 movie_encrypted.bin
