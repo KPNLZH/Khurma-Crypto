@@ -1,9 +1,9 @@
-#  Khurma Crypto
+# 🔒 Khurma Crypto
 
 **Secure and blazing-fast AES-256 file encryption tool for all file types, powered by Rust.**  
 **あらゆるファイル形式に対応した、高速かつ安全なAES-256ファイル暗号化ツール（Rust製）です。**
 
-# Binary Format Support / 対応フォーマット
+# 🧩 Binary Format Support / 対応フォーマット
 This tool treats all files as binary (Vec<u8>), so it supports:
 このツールはすべてのファイルをバイナリとして扱うため、以下に対応しています：
 
@@ -11,7 +11,7 @@ This tool treats all files as binary (Vec<u8>), so it supports:
 Any other format / その他すべての形式
 
 
-## Use Cases / 主な用途
+## ✅ Use Cases / 主な用途
 
 - **Safely storing files locally**  
   ローカルに安全にファイルを保存したいとき
@@ -27,7 +27,7 @@ This tool helps you keep your important files completely secure.
 
 ---
 
-##  Features / 特徴
+## ⚙️ Features / 特徴
 
 -  AES-256-CBC encryption with SHA-512 derived key and IV  
 　AES-256-CBC方式＋SHA-512ベースの鍵/IV生成による強力な暗号化
@@ -55,7 +55,7 @@ $khurma-crypto.exe encrypt <seed> <input_file> <output_file>
 # Decrypt a file / ファイルを復号化
 $khurma-crypto.exe decrypt <seed> <input_file> <output_file>
 ```
-## exsmple / サンプル
+## 💡 exsmple / サンプル
 ```bash
 #Encrypt a movie.mp4 / ファイルを暗号化
 khurma-crypto encrypt mySecretKey movie.mp4 movie_encrypted.bin
@@ -84,6 +84,8 @@ However, the author assumes no responsibility for any issues, damages, or losses
 Thanks for using Khurma Crypto! Stay safe and encrypt everything. 🔐
 
 Khurma Cryptoをご利用いただきありがとうございます！安全に、すべてを暗号化してください！🔐
+
+
 
 
 © 2025 khurma.lzh  
