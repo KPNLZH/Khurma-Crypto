@@ -20,6 +20,9 @@ Any other format / その他すべての形式
 
 - **Protecting data in offline environments or on USB drives**  
   オフライン環境やUSBメモリでの情報保護
+  
+-**Add the executable to your environment PATH to easily call the command from other programs or scripts.**
+　実行ファイルのパスを環境変数PATHに追加すれば、他のプログラムやスクリプトから簡単にコマンドを呼び出せます。
 
 This tool helps you keep your important files completely secure.  
 あなたの大切なファイルをしっかり守ります。
