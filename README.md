@@ -4,8 +4,7 @@
 **あらゆるファイル形式に対応した、高速かつ安全なAES-256ファイル暗号化ツール（Rust製）です。**
 
 # 🧩 Binary Format Support / 対応フォーマット
-This tool treats all files as binary (Vec<u8>), so it supports:
-このツールはすべてのファイルをバイナリとして扱うため、以下に対応しています：
+This tool treats all files as binary (Vec<u8>), so it supports / 以下の形式に対応しています：
 
 **Support format**
 Any other format / その他すべての形式
