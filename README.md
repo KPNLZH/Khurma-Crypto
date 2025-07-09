@@ -114,6 +114,129 @@ extended-crypt.exe decrypt key3 key2 key1 -i out.bin -o restored.txt
 extended-crypt.exe encrypt key1 key2 -i test.txt -o out.bin --binpath "C:\tools\khurma-crypto.exe"
 ```
 
+# 🧑‍💻 Quick Start for Beginners / はじめての方へ（初心者向けの使い方）
+
+## English / 英語
+
+This tool cannot be used by simply double-clicking with your mouse. Please follow these steps to run it from the "Command Prompt (black screen)":
+
+### Download and Setup
+1. Download `khurma-crypto.exe` from the releases page
+2. Save it to an easily accessible location (e.g., `C:\Tools\khurma`)
+
+### *💡 For Intermediate Users: Adding to PATH Environment Variable*
+If you add the executable folder (e.g., C:\Tools\khurma) to your PATH environment variable, you can run khurma-crypto from any folder without typing .\khurma-crypto.exe every time.
+
+### Opening Command Prompt from File Explorer
+1. Open the folder containing `khurma-crypto.exe` in File Explorer
+2. Hold **Shift** and **right-click** in an empty area of the folder
+3. Select "Open PowerShell window here" or "Open Command Prompt here"
+
+**💡 Note for Windows 11/10:** You may see "Open in Terminal" or "Open in PowerShell" - any of these options will work.
+
+### 🚀 Command Arguments Explanation
+- `encrypt`: Encrypt a file
+- `decrypt`: Decrypt a file  
+- `key`: Password for encryption/decryption
+
+**File extensions are flexible!** You can use any file extension you want.
+
+**Finding file paths:** If you're unsure about file paths, right-click the file you want to encrypt/decrypt and select "Copy as path" (Windows 11).
+
+**Syntax:**
+```bash
+khurma-crypto.exe <decrypt|encrypt> <key> <input filePath> <output filePath>
+```
+
+### Example Usage
+
+**Encrypting a file:**
+To encrypt `test.txt` in the same folder:
+```bash
+.\khurma-crypto.exe encrypt mypassword test.txt encrypted.bin
+```
+
+**Decrypting back to original:**
+```bash
+.\khurma-crypto.exe decrypt mypassword encrypted.bin restored.txt
+```
+
+---
+
+## 日本語 / Japanese
+
+このツールは マウスでダブルクリックするだけでは使えません。以下の手順で「コマンドプロンプト（黒い画面）」から実行してください。
+
+### ダウンロードと準備
+1. リリースページ から `khurma-crypto.exe` をダウンロードします
+2. わかりやすい場所（例：`C:\Tools\khurma`）に保存します
+
+### *💡 中級者向け：環境変数PATHに追加して呼出す*
+
+実行ファイルのフォルダ（例：C:\Tools\khurma）を環境変数 PATH に追加しておくと、
+毎回 .\khurma-crypto.exe と打たずに、どのフォルダからでも khurma-crypto だけで実行できるようになります。
+
+### エクスプローラーからコマンドプロンプトを開く
+1. `khurma-crypto.exe` を置いたフォルダを エクスプローラーで開く
+2. フォルダ内の何もないところで「**Shiftキーを押しながら右クリック**」→「PowerShell または コマンドプロンプトをここで開く」
+
+**💡 Windows 11/10 では「ターミナルで開く」や「PowerShellで開く」と表示される場合がありますが、どれでもOKです。**
+
+### 🚀 入力の引数の説明
+- `encrypt`: 暗号化
+- `decrypt`: 復号化
+- `key`: パスワード
+
+**ファイルの拡張子は自由です！**
+
+**ファイルのパス指定がわからない場合は** 暗号化、復号化したいファイルを右クリックして「パスのコピー」というところを押してパスをコピーしてください。(Win11の場合)
+
+**構文:**
+```bash
+khurma-crypto.exe <decrypt|encrypt> <key> <input filePath> <output filePath>
+```
+
+### 使用例
+
+**ファイルを暗号化してみよう:**
+同じフォルダにある `test.txt` を暗号化する場合：
+```bash
+.\khurma-crypto.exe encrypt パスワード test.txt encrypted.bin
+```
+
+**復号して元に戻す:**
+```bash
+.\khurma-crypto.exe decrypt パスワード encrypted.bin restored.txt
+```
+# ✅FAQ / よくある質問
+Q. Can I use any password? / パスワードは何でもいいの？/
+
+- Yes. We recommend using a strong password with 10+ characters. If forgotten, decryption is impossible.
+
+英数字を混ぜた10文字以上をおすすめします。忘れると復元できません！
+
+Q. Is the file completely hidden? / ファイルの中身は見えなくなるの？
+
+- Yes, encrypted files are unreadable without the correct password.
+
+完全に暗号化されるので、復号しないと中身は読み取れません。
+
+Q. How can I run this tool from any folder / ソフトを別のフォルダから実行したい
+
+-  Add the folder containing khurma-crypto.exe to your system PATH.
+
+khurma-crypto.exe のパスを環境変数PATHに追加すれば、どこからでも khurma-crypto で実行できます。
+
+
+
+## 📌 補足
+- 複数階層のパスも対応しています
+
+- 非ASCII文字（日本語ファイル名など）も対応していますが、文字コード依存の環境では注意が必要です
+
+
+
+
 ## ⚠️ Disclaimer / 免責事項
 
 This tool can be freely used in commercial environments, including server integration and enterprise use.  
