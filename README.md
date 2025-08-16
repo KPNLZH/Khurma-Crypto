@@ -66,33 +66,33 @@ This tool helps you keep your important files completely secure.
 
 🛣️ Paths with spaces / スペースを含むパス
 ```bash
-./khurma encrypt mypassword "C:\path with spaces\test.txt" encrypted.bin
+khurma-crypto.exe encrypt mypassword "C:\path with spaces\test.txt" encrypted.bin
 ```
 📁 Output to a non-existent directory (auto-created)
 存在しないディレクトリへの出力（自動作成）
 ```bash
-./khurma encrypt mypassword test.txt "C:\new_folder\encrypted.bin"
+khurma-crypto.exe encrypt mypassword test.txt "C:\new_folder\encrypted.bin"
 ```
 🗂️ Auto-create multi-level directories
 複数階層のディレクトリも自動作成
 ```bash
-./khurma encrypt mypassword test.txt "C:\path\to\new\folder\encrypted.bin"
+khurma-crypto.exe encrypt mypassword test.txt "C:\path\to\new\folder\encrypted.bin"
 ```
 📄 Normal paths / 通常のパス
 ```bash
-./khurma encrypt mypassword C:\path\test.txt encrypted.bin
+khurma-crypto.exe encrypt mypassword C:\path\test.txt encrypted.bin
 ```
 🔀 Relative paths / 相対パス
 ```bash
-./khurma encrypt mypassword ./test.txt ./encrypted.bin
+khurma-crypto.exe encrypt mypassword ./test.txt ./encrypted.bin
 ```
 💡 Example / サンプル
 ```bash
 # Encrypt a file with a key / 暗号化
-./khurma encrypt mySecretKey "C:\Videos\movie.mp4" "C:\Encrypted\movie_encrypted.bin"
+khurma-crypto.exe encrypt mySecretKey "C:\Videos\movie.mp4" "C:\Encrypted\movie_encrypted.bin"
 
 # Decrypt the encrypted file / 復号化
-./khurma decrypt mySecretKey "C:\Encrypted\movie_encrypted.bin" "C:\Videos\movie_restored.mp4"
+khurma-crypto.exe decrypt mySecretKey "C:\Encrypted\movie_encrypted.bin" "C:\Videos\movie_restored.mp4"
 ```
 
 ## 🔁 Multi-layer Encryption / 多重暗号化
@@ -153,12 +153,12 @@ khurma-crypto.exe <decrypt|encrypt> <key> <input filePath> <output filePath>
 **Encrypting a file:**
 To encrypt `test.txt` in the same folder:
 ```bash
-.\khurma-crypto.exe encrypt mypassword test.txt encrypted.bin
+khurma-crypto.exe encrypt mypassword test.txt encrypted.bin
 ```
 
 **Decrypting back to original:**
 ```bash
-.\khurma-crypto.exe decrypt mypassword encrypted.bin restored.txt
+khurma-crypto.exe decrypt mypassword encrypted.bin restored.txt
 ```
 
 ---
@@ -201,12 +201,12 @@ khurma-crypto.exe <decrypt|encrypt> <key> <input filePath> <output filePath>
 **ファイルを暗号化してみよう:**
 同じフォルダにある `test.txt` を暗号化する場合：
 ```bash
-.\khurma-crypto.exe encrypt パスワード test.txt encrypted.bin
+khurma-crypto.exe encrypt パスワード test.txt encrypted.bin
 ```
 
 **復号して元に戻す:**
 ```bash
-.\khurma-crypto.exe decrypt パスワード encrypted.bin restored.txt
+khurma-crypto.exe decrypt パスワード encrypted.bin restored.txt
 ```
 # ✅FAQ / よくある質問
 Q. Can I use any password? / パスワードは何でもいいの？/
