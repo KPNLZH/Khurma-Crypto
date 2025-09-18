@@ -58,6 +58,9 @@ This tool helps you keep your important files completely secure.
 -  Rust-powered CLI: fast, secure, memory-efficient  
 　Rustで実装された高速＆軽量なCLIツール
 
+- A more user-friendly GUI (V1.2)
+より簡単な操作に対応したGUI (V1.2より実装)
+
 - Compatible with the companion multi-layer encryption launcher (`extended-crypt`)  
   連携ツール `extended-crypt` を使った多重暗号化に対応
 ---
