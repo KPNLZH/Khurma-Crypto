@@ -61,6 +61,9 @@ This tool helps you keep your important files completely secure.
 - A more user-friendly GUI (V1.2)
   より簡単な操作に対応したGUI (V1.2より実装)
 
+- Enhanced flexibility for program integration with Pipe Mode
+  パイプモードにより、他のプログラムへのより柔軟な組み込みに対応
+
 - Compatible with the companion multi-layer encryption launcher (`extended-crypt`)  
   連携ツール `extended-crypt` を使った多重暗号化に対応
 ---
@@ -101,6 +104,12 @@ khurma-crypto.exe decrypt mySecretKey "C:\Encrypted\movie_encrypted.bin" "C:\Vid
 ```bash
 khurma-crypto.exe gui
 ```
+🔀Pipe Mode / パイプモード (標準入出力)
+```
+<stdin> | khurma-crypto.exe encrypt <seed> pipe > <stdout>
+<stdin> | khurma-crypto.exe decrypt <seed> pipe > <stdout>
+```
+
 
 ## 🔁 Multi-layer Encryption / 多重暗号化
 
