@@ -3,6 +3,8 @@
 
 ## 関数一覧 📝
 `encrypt_data` 🔒
+`decrypt_data` 🔒
+`free_crypto_data` 🗑️
 メモリ上の生データをAES256で暗号化します。
 
 ## C関数シグネチャ
