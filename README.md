@@ -334,6 +334,8 @@ khurma-crypto.exe のパスを環境変数PATHに追加すれば、どこから�
 - 非ASCII文字（日本語ファイル名など）も対応していますが、文字コード依存の環境では注意が必要です
 
 
+### Discord Guild
+[Join Khurma-Crypto Server](https://discord.gg/3apkvcJTAW)
 
 
 ## ⚠️ Disclaimer / 免責事項
@@ -353,9 +355,6 @@ However, the author assumes no responsibility for any issues, damages, or losses
 Thanks for using Khurma Crypto! Stay safe and encrypt everything. 🔐
 
 Khurma Cryptoをご利用いただきありがとうございます！安全に、すべてを暗号化してください！🔐
-
-
-
 
 © 2025 khurma.lzh  
 Distributed under the Apache 2.0 License.  
