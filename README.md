@@ -110,6 +110,89 @@ khurma-crypto.exe gui
 <stdin> | khurma-crypto.exe decrypt <seed> pipe > <stdout>
 ```
 
+🔀Code example/具体的な例
+```rust
+use std::process::{Command, Stdio};
+use std::io;
+use std::io::Write; 
+use std::io::Read; 
+use hex;
+
+fn main() {
+    // Pathちゃんと合わせましょうね
+    let executable_path = "khurma-crypto.exe";
+    
+    // なんでもできる（べつのこまんども使える）
+    println!("--- STEP 1: Starting encryption process via pipe ---");
+    let mut encrypt_child = Command::new(executable_path)
+        .arg("encrypt")
+        .arg("Keyword")
+        .arg("pipe")
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .spawn()
+        .expect("khurma-crypto.exe failed to start");
+
+    // ここでデータ渡すからテストしたいならここの文字変えてね
+    let mut stdin = encrypt_child.stdin.take().expect("Failed to open stdin for encryption");
+    let input_data = "Hello This is Test Message for Khurma Crypto".as_bytes();
+    stdin.write_all(input_data).expect("Failed to write to stdin for encryption");
+    
+    // STDINを閉じる（閉じないと子プロセスがやばい）
+    drop(stdin);
+
+    // よみこみ
+    let mut stdout = encrypt_child.stdout.take().expect("Failed to open stdout for encryption");
+    let mut encrypted_output = Vec::new();
+    stdout.read_to_end(&mut encrypted_output).expect("Failed to read stdout for encryption");
+
+    let encrypt_status = encrypt_child.wait()
+        .expect("encryption process failed to wait");
+    
+    println!("Encryption process finished with status: {:?}", encrypt_status);
+    println!("---");
+    
+    // HEXで表示するRAWだと数字の羅列になるからHEXにしとく(かっこいいから)
+    let hex_output = hex::encode(&encrypted_output);
+    println!("Encrypted output (Hex): {}", hex_output);
+    println!("--------------------------------------------------");
+
+    // 上とおなじ
+    println!("--- STEP 2: Starting decryption process via pipe ---");
+    let mut decrypt_child = Command::new(executable_path)
+        .arg("decrypt")
+        .arg("Keyword")
+        .arg("pipe")
+        .stdin(Stdio::piped())
+        .stdout(Stdio::piped())
+        .spawn()
+        .expect("khurma-crypto.exe failed to start for decryption");
+
+    // かきこみ
+    let mut decrypt_stdin = decrypt_child.stdin.take().expect("Failed to open stdin for decryption");
+    decrypt_stdin.write_all(&encrypted_output).expect("Failed to write encrypted data to stdin for decryption");
+    
+    // STDINを閉じる
+    drop(decrypt_stdin);
+
+    //あうとぷっと
+    let mut decrypt_stdout = decrypt_child.stdout.take().expect("Failed to open stdout for decryption");
+    let mut decrypted_output = Vec::new();
+    decrypt_stdout.read_to_end(&mut decrypted_output).expect("Failed to read stdout for decryption");
+
+    let decrypt_status = decrypt_child.wait()
+        .expect("decryption process failed to wait");
+
+    println!("Decryption process finished with status: {:?}", decrypt_status);
+    println!("---");
+    
+    // UTF-8でひょうじ(いちおうHEXでもだせるけど文章ならこれでおｋ)
+    let original_message = String::from_utf8_lossy(&decrypted_output);
+    println!("Decrypted output: {}", original_message);
+    println!("--------------------------------------------------");
+}
+
+```
 
 ## 🔁 Multi-layer Encryption / 多重暗号化
 
