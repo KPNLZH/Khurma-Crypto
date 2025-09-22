@@ -176,3 +176,29 @@ if __name__ == "__main__":
     test_encryption_and_decryption()
 ```
 
+## ⚠️ Disclaimer / 免責事項
+
+This tool can be freely used in commercial environments, including server integration and enterprise use.  
+However, the author assumes no responsibility for any issues, damages, or losses that may occur through its usage.  
+**Use at your own risk.**
+
+本ツールは、サーバー組み込みや商用環境での利用を含め、自由にご利用いただけます。  
+ただし、本ツールの使用によって生じた問題・損害・損失について、開発者は一切の責任を負いません。  
+**ご利用は自己責任でお願いいたします。**
+
+
+# 🙏 Special Thanks
+**Built with 💙 using Rust and the awesome aes, cbc, and sha2 crates.**
+
+Thanks for using Khurma Crypto! Stay safe and encrypt everything. 🔐
+
+Khurma Cryptoをご利用いただきありがとうございます！安全に、すべてを暗号化してください！🔐
+
+
+
+
+© 2025 khurma.lzh  
+Distributed under the Apache 2.0 License.  
+All other rights reserved.
+
+
