@@ -2,10 +2,13 @@
 このライブラリは、Rustで実装されたAES256暗号化アルゴリズムを多言語から利用するためのものです。メモリ管理に特に注意して設計されています。
 
 ## 関数一覧 📝
-`encrypt_data` 🔒
-`decrypt_data` 🔒
-`free_crypto_data` 🗑️
-メモリ上の生データをAES256で暗号化します。
+`encrypt_data` 🔒メモリ上のデータを暗号化します。
+
+`decrypt_data` 🔒メモリ上のデータを復号化します
+
+`free_crypto_data` 🗑️ポインタから返ってきたデータを解放します
+
+
 
 ## C関数シグネチャ
 `uint8_t* encrypt_data(const uint8_t* data_ptr, size_t data_len, const char* seed_ptr, size_t* output_len);`
