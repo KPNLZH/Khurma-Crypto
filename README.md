@@ -62,10 +62,17 @@ This tool helps you keep your important files completely secure.
   より簡単な操作に対応したGUI (V1.2より実装)
 
 - Enhanced flexibility for program integration with Pipe Mode
+
   パイプモードにより、他のプログラムへのより柔軟な組み込みに対応
 
 - Compatible with the companion multi-layer encryption launcher (`extended-crypt`)  
   連携ツール `extended-crypt` を使った多重暗号化に対応
+
+- Folder path-based encryption for whole projects
+
+フォルダパスを指定することによりプロジェクト全体を暗号化可能
+（V1.4.1）
+
 ---
 
 ## 📦 Usage / 使い方
@@ -212,6 +219,20 @@ extended-crypt.exe decrypt key3 key2 key1 -i out.bin -o restored.txt
 ```bash
 extended-crypt.exe encrypt key1 key2 -i test.txt -o out.bin --binpath "C:\tools\khurma-crypto.exe"
 ```
+
+
+# ⚠️ Caveats （V1.4.1）
+- **Encryption Fails and Skips Source Files if Output and Source Paths are the Same:** 
+The tool is designed to prevent data corruption. If the output path is identical to the source path, the encryption process will automatically **skip** the file instead of overwriting the original source, resulting in the file not being encrypted.
+
+- **出力パスとソースパスが同一の場合、暗号化は失敗しソースファイルをスキップします：**
+ データ破損を防ぐため、出力パスがソースパスと同一の場合、暗号化プロセスは元のソースを上書きせず自動的にファイルを**スキップ**します。その結果、ファイルは暗号化されません。
+
+- **Existing Files at Output Location Will Be Overwritten:**
+If a file with the same name already exists in the output directory, it will be automatically **overwritten** by the newly encrypted file.
+
+- **出力先に既存ファイルがある場合、上書きされます：**
+ 出力ディレクトリに同じ名前のファイルが既に存在する場合、新しく暗号化されたファイルによって自動的に**上書き**されます。
 
 # 🧑‍💻 Quick Start for Beginners / はじめての方へ（初心者向けの使い方）
 
