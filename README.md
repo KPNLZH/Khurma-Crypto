@@ -11,6 +11,9 @@
 
 任意の乱数シードから何重にも暗号化を重ねることで、復号の鍵空間は天文学的規模へと拡張され、総当たり攻撃や量子探索に対して極めて強靭です。
 
+- Taking into account speed and resource constraints, we adopted SHA‑512 with AES‑256 multi-layer encryption as the result of this trade-off.
+
+速度とリソース制約を踏まえて、このトレードオフの結果、SHA‑512＋AES‑256多重暗号化を採用しました
 
 # 🧩 Binary Format Support / 対応フォーマット
 This tool treats all files as binary (Vec<u8>), so it supports / 以下の形式に対応しています：
